@@ -1,0 +1,31 @@
+package characters
+import world.Quest
+fun main() {
+    val number: Int = 0
+    println(number)
+    val naruto = Hero(name = "Hаруто", gender = "мужской", role = "Шиноби", level = 5, element = "Ветер", hp = 150, mp = 200)
+    naruto.showStats()
+    val kakashi = Hero(name = "Какаши", gender = "мужской", role = "Шиноби", level = 15, element = "Молния", hp = 250, mp = 300)
+    kakashi.showStats()
+    val orochimaru = Enemy(name = "0рочимару", hp = 350, element = "Ветер")
+    naruto.castSpellOn(enemy = orochimaru, spellName = "Pасенган", damage = 30)
+    naruto.duel(opponent = kakashi)
+    val hero1 = Hero(name = "Артур", hp = 100)
+    println("Герой жив? ${hero1.isAlive()}")
+    val hero2 = Hero(name = "Артур", hp = 0)
+    println("Герой жив? ${hero2.isAlive()}")
+    println(orochimaru.isStrong())
+    val hero = Hero(name = "Артур", level = 4)
+    val easyQuest = Quest(title = "Сбор трав", duration = 2, reward = 100, difficulty = "Лёгкий")
+    val hardQuest = Quest(title = "0хота на дракона", duration = 10, reward = 1000, difficulty = "Сложный")
+    hero.canAcceptQuest(easyQuest)
+    hero.canAcceptQuest(hardQuest)
+    val enemy1 = Enemy(name = "Гоблин", hp = 30)
+    println (enemy1.getThreatLevel())
+    val enemy2 = Enemy(name = "Орк", hp = 100)
+    println (enemy2.getThreatLevel())
+    val enemy3 = Enemy(name = "Дракон", hp = 200)
+    println (enemy3.getThreatLevel())
+    val zombie = Enemy(name = "Зомби", hp = -100)
+    println(zombie.getThreatLevel())
+}
